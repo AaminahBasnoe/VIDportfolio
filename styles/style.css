@@ -1,0 +1,379 @@
+/*********/
+/* FONTS */
+/*********/
+@font-face {
+	font-family: 'Bell MT Regular';
+	src:url("../fonts/bell.ttf") format("truetype");	
+}
+
+
+@font-face {
+	font-family: 'Bell MT Italic';
+	src:url("../fonts/BellMTItalic.otf") format("opentype");	
+}
+
+@font-face {
+	font-family: 'Centaur';
+	src:url("../fonts/CENTAUR.TTF") format("truetype");	
+}
+
+
+/**************/
+/* CSS REMEDY */
+/**************/
+*, *::after, *::before {
+  box-sizing:border-box;  
+  margin: 0;
+  padding: 0;
+}
+
+button, summary {
+	cursor: pointer;
+}
+
+
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	/* startje */
+	--color-text:#111;
+	--color-background:#eee;
+}
+
+
+
+
+
+/****************/
+/* STYLING BODY*/
+/****************/
+
+/**** STYLING HEADER ****/
+header{
+	width: 100%;
+	height: 100vh;
+	background-color: #F09BB9;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: white;
+}
+
+header div{
+	display: inline-block;
+}
+
+h1{
+	font-size: 3.5em;
+	font-family: 'Bell MT Regular';
+	font-weight: lighter;
+
+	overflow: hidden;
+	border-right: .10em solid white;
+	white-space: nowrap;
+	animation: typing 4.5s infinite;
+	width: 0;
+}
+
+
+@keyframes typing {
+	from { width: 1em }
+	to { width: 100% }
+}
+
+
+header p:first-of-type{
+	font-size: 1.7em;
+	font-style: italic;
+}
+
+header p:last-of-type{
+	font-size: 1.4em;
+	order: -1;
+	font-style: italic;
+	position: absolute;
+	top: 8em;
+}
+
+header img{
+	width: 1em;
+}
+
+
+
+/**** STYLING MAIN ****/
+
+/* Algemene styling van de main */
+
+section{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 4em;
+	gap: 2em;
+	height: 100vh;
+	margin-top: 3em;
+	overflow: visible;
+}
+
+section > div:nth-of-type(2){
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 4em;
+}
+
+section p{
+	font-size: 1.2em;
+	font-family: 'Centaur';
+}
+
+section span{
+	font-size: 2em;
+	font-weight: 800;
+}
+
+section p:nth-of-type(2){
+	margin-top: 1.5em;
+}
+
+h2{
+	text-transform: uppercase;
+	font-family: 'Bell MT Italic';
+	font-size: 2.5em;
+	font-weight: lighter;
+}
+
+video{
+	width: 100%;
+}
+
+main img{
+	width: 60%;
+	border-bottom: #F9C57B solid 5px;
+	border-right: #F9C57B solid 5px;
+}
+
+figure{
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center	;
+}
+
+section:first-of-type figure video,
+section:nth-of-type(6) figure video{
+	transform: scale(1.1);
+}
+
+section:nth-of-type(2) figure video,
+section:nth-of-type(3) figure video,
+section:nth-of-type(4) figure video,
+section:nth-of-type(5) figure video{
+	transform: scaleY(1.1);
+}
+
+section > div:first-of-type{
+	padding-right: 1em;
+	padding-top: 1em;
+	background-repeat: no-repeat;
+	background-position: top 0 right 0;
+}
+
+
+
+/* Styling specifiek per section */
+
+/* GRID & KLEUR */
+section:first-of-type{
+	background-image: url(../images/purpleblob.png);
+	background-repeat: no-repeat;
+	background-size: 40%;
+	background-position: top 3em left;
+}
+
+section:first-of-type span{
+	color: #E6C6F7;
+}
+
+section:first-of-type figure{
+	border-bottom: #E6C6F7 solid 5px;
+	border-right: #E6C6F7 solid 5px;
+}
+
+section:first-of-type > div:first-of-type{
+	background-size: 3em;
+	background-image: url(../images/purpleblob2.png);
+}
+
+
+/* TYPOGRAFIE */
+section:nth-of-type(2){
+	background-image: url(../images/blueblob.png);
+	background-repeat: no-repeat;
+	background-size: 20%;
+	background-position: top 3em right 0;
+}
+
+section:nth-of-type(2) span{
+	color: #83AEE6;
+}
+
+section:nth-of-type(2) figure{
+	border-left: #83AEE6 solid 5px;
+	border-bottom: #83AEE6 solid 5px;
+}
+
+section:nth-of-type(2) > div:first-of-type{
+	background-size: 2em;
+	background-image: url(../images/blueblob2.png);
+}
+
+
+/* BEELDTAAL */
+section:nth-of-type(3) div:nth-of-type(2) div:first-of-type{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+section:nth-of-type(3){
+	background-image: url(../images/orangeblob.png);
+	background-repeat: no-repeat;
+	background-size: 30%;
+	background-position: top 3em left 0;
+}
+
+section:nth-of-type(3) span{
+	color: #F9C57B;
+}
+
+section:nth-of-type(3) > div:first-of-type{
+	background-size: 3em;
+	background-image: url(../images/orangeblob2.png);
+}
+
+
+/* INTERFACE & INTERACTIE */
+section:nth-of-type(4){
+	background-image: url(../images/pinkblob.png);
+	background-repeat: no-repeat;
+	background-size: 24.5%;
+	background-position: top 3em right 0;
+}
+
+section:nth-of-type(4) span{
+	color: #f5ccee;
+}
+
+section:nth-of-type(4) figure{
+	border-left: #f5ccee solid 5px;
+	border-bottom: #f5ccee solid 5px;
+}
+
+section:nth-of-type(4) > div:first-of-type{
+	background-size: 2.5em;
+	background-image: url(../images/pinkblob2.png);
+}
+
+
+/* INTERFACE & BEWEGING */
+section:nth-of-type(5){
+	background-image: url(../images/greenblob.png);
+	background-repeat: no-repeat;
+	background-size: 40%;
+	background-position: top 3em left;
+}
+
+section:nth-of-type(5) span{
+	color: #A4C2CC;
+}
+
+section:nth-of-type(5) figure{
+	border-right: #A4C2CC solid 5px;
+	border-bottom: #A4C2CC solid 5px;
+}
+
+section:nth-of-type(5) > div:first-of-type{
+	background-size: 3.5em;
+	background-image: url(../images/greenblob2.png);
+}
+
+
+/* MEESTERPROEF + LEERDOEL */
+section:nth-of-type(6){
+	background-image: url(../images/lightgreenblob.png);
+	background-repeat: no-repeat;
+	background-size: 35%;
+	background-position: top 3em right 0;
+}
+
+section:nth-of-type(6) span{
+	color: #A9F2B4;
+}
+
+section:nth-of-type(6) figure{
+	border-left: #A9F2B4 solid 5px;
+	border-bottom: #A9F2B4 solid 5px;
+}
+
+section:nth-of-type(6) > div:first-of-type{
+	background-size: 3.2em;
+	background-image: url(../images/lightgreenblob2.png);
+}
+
+
+
+/**** FOOTER/METADATA STYLING ****/
+footer{
+	padding: 5em 4em;
+	background-image: url(../images/darkpinkblob.png);
+	background-repeat: no-repeat;
+	background-size: 15.5%;
+	background-position: bottom 0 left 0;
+}
+
+footer p{
+	font-family: 'Centaur';
+	font-size: 1.2em;
+}
+
+footer p:first-of-type{
+	margin-top: 1em;
+}
+
+footer span{
+	font-weight: bolder;
+}
+
+footer p:nth-of-type(6){
+	margin-bottom: 1em;
+}
+
+
+
+/**** SCROLLBAR STYLING (bron staat in de bronnenlijst) ****/
+
+::-webkit-scrollbar {
+    width: 7px; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #f16ba0; 
+}
+	
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #fab5d0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
